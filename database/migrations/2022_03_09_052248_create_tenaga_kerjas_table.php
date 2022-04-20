@@ -14,12 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tenaga_kerjas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_tenagaKerja');
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->text('alamat');
-            $table->foreignId('id_jabatan')->constrained('jabatans');
+            $table->foreignId('id_jabatan')
+            ->onUpdate('cascade')
+            ->onDelete('cascade')
+            ->constrained('jabatans');
+            $table->string('profile');
             $table->timestamps();
         });
     }

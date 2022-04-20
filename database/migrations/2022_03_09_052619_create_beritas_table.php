@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tgl_berita');
             $table->string('judul');
             $table->string('cover');
+            $table->text('excerpt');
             $table->binary('deskripsi');
             $table->timestamps();
         });

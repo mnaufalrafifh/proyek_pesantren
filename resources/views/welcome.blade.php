@@ -2,6 +2,11 @@
 @section('hero')
       <!-- ======= Hero Section ======= -->
   <section id="hero">
+    @if (session('status'))
+    <div class="alert alert-success" role="alert">
+        {{session('status')}}
+    </div>
+    @endif
     <div class="hero-container">
       <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -60,7 +65,7 @@
 @endsection
 @section('content')
 <main id="main">
-    <section class="team">
+    <section id="visimisi" class="visimisi">
         <div class="container">
             <div class="section-title">
             <h2 class="">Visi dan Misi</h2>
@@ -75,9 +80,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed vitae nisl eget ac amet, urna sit. Non faucibus pretium aliquam tempor nunc orci, leo amet.</p>
                 </div>
             </div>
-        </div>
-
-        
+        </div>  
     </section>
 
     <!-- ======= Team Section ======= -->
@@ -88,11 +91,15 @@
           <h2>Tenaga Kerja</h2>
         </div>
 
+        <div class="d-flex justify-content-end pb-4">  
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lihat Lebih Banyak</a>
+        </div>
+
         <div class="row">
 
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="member">
-              <img src="{{ asset('') }}front-end/assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <img src="{{ asset('') }}front-end/assets/img/team/team-1.jpg" class="img-fluid" style="border-radius:3%" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Walter White</h4>
@@ -167,11 +174,14 @@
       </div>
     </section><!-- End Team Section -->    
 
-    <section class="portfolio">
+    <section id="berita" class="berita">
         <div class="container">
             <div class="section-title">
                 <h2>Berita</h2>
                 <p>Berita terkini Pesantren Darul Hijrah</p>
+            </div>
+            <div class="d-flex justify-content-end pb-4">  
+              <a href="" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lihat Lebih Banyak</a>
             </div>
             <div class="row">
                 <div class="col-lg-4 pb-4">
@@ -284,13 +294,16 @@
           <li data-filter=".filter-card">Belajar Mengajar</li>
         </ul>
       </div>
+      <div class="d-flex justify-content-end pb-4">  
+        <a href="" class="btn-get-started animate__animated animate__fadeInUp scrollto">Lihat Lebih Banyak</a>
+      </div>
     </div>
 
     <div class="row portfolio-container">
 
       <div class="col-lg-4 col-md-6 portfolio-item filter-app">
         <div class="portfolio-wrap">
-          <img src="{{ asset('') }}front-end/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+          <img src="{{ asset('') }}front-end/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" style="border-radius:3%" alt="">
           <div class="portfolio-info">
             <h4>App 1</h4>
             <p>App</p>
@@ -434,7 +447,7 @@
         <div class="contact-address">
           <i class="bi bi-geo-alt"></i>
           <h3>Address</h3>
-          <address>A108 Adam Street, NY 535022, USA</address>
+          <address>Artodung, Kecamatan Galis, Pamekasan</address>
         </div>
       </div>
 
@@ -456,24 +469,25 @@
 
     </div>
 
-    <div class="section-title">
+    <div class="section-title mt-5">
       <h2>Feedback</h2>
     </div>
     <div class="form">
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+      <form action="/feedback" method="POST" class="php-email-form" autocomplete="off">
+        @csrf
         <div class="row">
           <div class="col-md-6 form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+            <input type="text" name="nama_feedback" class="form-control" id="" placeholder="Your Name" required>
           </div>
           <div class="col-md-6 form-group mt-3 mt-md-0">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+            <input type="email" class="form-control" name="email_feedback" id="" placeholder="Your Email"  required>
           </div>
         </div>
         <div class="form-group mt-3">
-          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          <input type="text" class="form-control" name="subject_feedback" id="" placeholder="Subject" required>
         </div>
         <div class="form-group mt-3">
-          <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          <textarea class="form-control" name="pesan_feedback" rows="5" placeholder="Message" required></textarea>
         </div>
         <div class="my-3">
           <div class="loading">Loading</div>

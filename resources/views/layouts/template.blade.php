@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Groovin Bootstrap Template - Index</title>
+  <title>Web Profile Pesantren Darul Hijrah</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('') }}front-end/assets/img/logo1.png">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,7 +51,7 @@
   <script src="{{ asset('') }}front-end/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="{{ asset('') }}front-end/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="{{ asset('') }}front-end/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="{{ asset('') }}front-end/assets/vendor/php-email-form/validate.js"></script>
+  {{-- <script src="{{ asset('') }}front-end/assets/vendor/php-email-form/validate.js"></script> --}}
 
   <!-- Template Main JS File -->
   <script src="{{ asset('') }}front-end/assets/js/main.js"></script>
