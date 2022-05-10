@@ -899,7 +899,7 @@ section {
 .team .member {
   text-align: center;
   margin-bottom: 20px;
-  background: #343a40;
+  /* background: #343a40; */
   border-radius: 3%;
   position: relative;
 }

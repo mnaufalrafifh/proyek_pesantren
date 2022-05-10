@@ -10,23 +10,25 @@
 
             <div class="row">
     
-              <div class="col-xl-3 col-lg-4 col-md-6">
+              @foreach ($dataTenagaKerja as $item)
+              <div class="col-xl-3 col-lg-4 col-md-6 data-wow-delay="0.1s">
                 <div class="member">
-                  <img src="{{ asset('') }}front-end/assets/img/team/team-1.jpg" class="img-fluid" style="border-radius:3%" alt="">
+                  <img src="{{ asset('image/tenaga_kerja/'.$item->profile) }}" class="img-fluid" style="width: 100%; height:250px; max-height:400px" alt="">
                   <div class="member-info">
                     <div class="member-info-content">
-                      <h4>Walter White</h4>
-                      <span>Chief Executive Officer</span>
-                      <div class="social">
+                      <h4>{{ $item->nama_depan}} {{$item->nama_belakang}}</h4>
+                      <span>{{ $item->nama_jabatan }}</span>
+                      {{-- <div class="social">
                         <a href=""><i class="bi bi-twitter"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
                         <a href=""><i class="bi bi-instagram"></i></a>
                         <a href=""><i class="bi bi-linkedin"></i></a>
-                      </div>
+                      </div> --}}
                     </div>
                   </div>
                 </div>
               </div>
+              @endforeach
     </section>
 </main>
 @endsection

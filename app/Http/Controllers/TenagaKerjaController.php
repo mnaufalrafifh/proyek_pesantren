@@ -16,9 +16,7 @@ class TenagaKerjaController extends Controller
      */
     public function index()
     {
-        $data = TenagaKerja::all();
-        $data = DB::table('tenaga_kerjas')
-        ->join('jabatans', 'tenaga_kerjas.id_jabatan', '=', 'jabatans.id')
+        $data = TenagaKerja::join('jabatans', 'tenaga_kerjas.id_jabatan', '=', 'jabatans.id')
         ->get();
 
         return view('admin.tenaga_kerja.index', compact('data'));

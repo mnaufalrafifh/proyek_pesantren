@@ -6,6 +6,11 @@ use App\Http\Controllers\KategoriKegiatanController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\TenagaKerjaController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DetailTenagaKerjaController;
+use App\Http\Controllers\DetailBeritaController;
+use App\Http\Controllers\DetailKegiatanController;
+use App\Http\Controllers\FrontendFeedbackController;
 use App\Models\Feedback;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +25,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// detail berita berdasarkan id berita 
+Route::get('content_berita/{id}',[ FrontendController::class,'detailBerita'])->name('detail.berita');
+
+Route::resource('/', FrontendController::class);
+
+Route::get('/detail_tenaga_kerja', function(){
+    return view('detail_tenaga_kerja');
 });
+
+Route::resource('/detail_tenaga_kerja', DetailTenagaKerjaController::class);
+
+Route::get('/detail_berita', function(){
+    return view('detail_berita');
+});
+
+Route::resource('/detail_berita', DetailBeritaController::class);
+
+Route::get('/detail_kegiatan', function(){
+    return view('detail_kegiatan');
+});
+
+Route::resource('/detail_kegiatan', DetailKegiatanController::class);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [FeedbackController::class, 'index']);
@@ -64,15 +88,15 @@ Route::middleware(['auth'])->group(function () {
     
 });
 
-
-Route::post('/feedback', function(){
-    $tambahData = new Feedback();
-    $tambahData->nama_feedback = request('nama_feedback');
-    $tambahData->email_feedback = request('email_feedback');
-    $tambahData->subject_feedback = request('subject_feedback');
-    $tambahData->pesan_feedback = request('pesan_feedback');
-    $tambahData->save();
-    return view('welcome')->withStatus('Berhasil Memberikan Feedback');;
-});
+Route::post('feedback', [FrontendFeedbackController::class, 'simpanFeedback'])->name('feedback.store');
+// Route::post('/feedback', function(){
+//     $tambahData = new Feedback();
+//     $tambahData->nama_feedback = request('nama_feedback');
+//     $tambahData->email_feedback = request('email_feedback');
+//     $tambahData->subject_feedback = request('subject_feedback');
+//     $tambahData->pesan_feedback = request('pesan_feedback');
+//     $tambahData->save();
+//     return view('welcome')->withStatus('Berhasil Memberikan Feedback');;
+// });
 
 require __DIR__.'/auth.php';

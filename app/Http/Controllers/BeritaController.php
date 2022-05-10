@@ -120,7 +120,7 @@ class BeritaController extends Controller
                 'tgl_berita' => 'required',
                 'excerpt' => 'required',
                 'deskripsi' => 'required',
-                'cover' => 'required|mimes:png,jpg,jpeg'
+                'cover' => 'mimes:png,jpg,jpeg'
             ],
             [
                 'required' => ':Attribute harus terisi',
@@ -136,8 +136,7 @@ class BeritaController extends Controller
         );
 
         $file = $request->file('cover');
-        $date = date("d-m-Y His");
-        $final_file_name = $date . '.' . $file->getClientOriginalExtension();
+        
 
         try {
             $updateData = Berita::find($id);
@@ -147,10 +146,11 @@ class BeritaController extends Controller
             $updateData->deskripsi = $request->get('deskripsi');
 
             if (isset($file)) {
-                $path = public_path() . '\image\berita/';
-                $file_old = $path . $updateData->cover;
+                $path = public_path('image\berita');
+                $file_old = $path .'/'. $updateData->cover;
+               
                 unlink($file_old);
-
+              
                 $date = date("d-m-Y His");
                 $final_file_name = $date . '.' . $file->getClientOriginalExtension();
                 $file->move($path, $final_file_name);

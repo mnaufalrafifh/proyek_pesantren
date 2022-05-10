@@ -39,6 +39,7 @@
 <body>
 
  @include('partials.navbar')
+ @include('sweetalert::alert')
  @yield('hero')
  @yield('content')
  @include('partials.footer')

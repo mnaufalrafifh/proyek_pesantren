@@ -47,7 +47,7 @@
                                     <br>
                                     <label for="" class="ml-4 mt-2">Excerpt Berita</label>
                                     <div class="col-sm-10 ml-3">
-                                      <textarea name="excerpt" class="form-control " rows="10" cols="50" @error('excerpt') is-invalid @enderror id=""></textarea>
+                                      <textarea name="excerpt" class="form-control " rows="3" cols="50" @error('excerpt') is-invalid @enderror id="" maxlength="100"></textarea>
                                     </div>
                                     @error('excerpt')
                                     <small class="text-danger ml-4" for="">{{ $message }}</small>

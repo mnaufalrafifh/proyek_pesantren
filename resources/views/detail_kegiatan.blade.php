@@ -13,27 +13,28 @@
                 <div class="col-lg-12 d-flex justify-content-center">
                   <ul id="portfolio-flters">
                     <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">Hari Besar</li>
-                    <li data-filter=".filter-card">Belajar Mengajar</li>
+                    @foreach ($kategori as $item_kategori)
+                    <li data-filter=".{{  Str::slug($item_kategori->nama_kategori) }}">{{ ucwords($item_kategori->nama_kategori) }}</li>
+                    @endforeach
                   </ul>
                 </div>
               </div>
           
               <div class="row portfolio-container">
-          
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                @foreach ($dataKegiatan as $item)
+                <div class="col-lg-4 col-md-6 portfolio-item {{ Str::slug($item->nama_kategori)}}">
                   <div class="portfolio-wrap">
-                    <img src="{{ asset('') }}front-end/assets/img/portfolio/portfolio-1.jpg" class="img-fluid" style="border-radius:3%" alt="">
+                    <img src="{{ asset('image/kegiatan/'.$item->cover) }}" class="img-fluid" style="border-radius:3%; width: 100%; height:250px; max-height:400px" alt="">
                     <div class="portfolio-info">
-                      <h4>App 1</h4>
-                      <p>App</p>
+                      <h4>{{ $item->nama_kegiatan }}</h4>
+                      <p>{{ $item->nama_kategori }}</p>
                       <div class="portfolio-links">
-                        <a href="{{ asset('') }}front-end/assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                        <a href="{{ asset('image/kegiatan/'.$item->cover) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$item->nama_kegiatan}}"><i class="bx bx-search"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
+                @endforeach
     </section>
 </main>
 @endsection
