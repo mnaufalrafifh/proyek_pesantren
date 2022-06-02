@@ -21,7 +21,7 @@
                           <p class="card-text" style="width: 100%; height:100px; max-height:400px">{{ $item->excerpt }}</p>
                         </div>
                         <div class="card-footer d-flex justify-content-end">
-                            <a href="#">Selengkapnya</a>
+                            <a href="{{ route('detail.berita',$item->id) }}">Selengkapnya</a>
                         </div>
                       </div>
                 </div>

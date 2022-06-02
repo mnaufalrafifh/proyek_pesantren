@@ -48,7 +48,7 @@
                                         <th scope="col">No.</th>
                                         <th scope="col">Judul Berita</th>
                                         <th scope="col">Tanggal berita</th>
-                                        <th scope="col">Excerpt</th>
+                                        <th scope="col" style="width: 30px">Excerpt</th>
                                         <th scope="col">Deskripsi</th>
                                         <th scope="col">Cover</th>
                                         <th scope="col">Aksi</th>

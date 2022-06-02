@@ -20,26 +20,26 @@
             </div>
   
             <!-- Slide 2 -->
-            <div class="carousel-item" style="background-image: url({{ asset('') }}front-end/assets/img/slide/slide-2.jpg);">
+            <div class="carousel-item" style="background-image: url({{ asset('') }}front-end/assets/img/slide/2.png);">
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                  {{-- <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p> --}}
                   <div>
-                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    {{-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> --}}
                   </div>
                 </div>
               </div>
             </div>
   
             <!-- Slide 3 -->
-            <div class="carousel-item" style="background-image: url({{ asset('') }}front-end/assets/img/slide/slide-3.jpg);">
+            <div class="carousel-item" style="background-image: url({{ asset('') }}front-end/assets/img/slide/3.png);">
               <div class="carousel-container">
                 <div class="carousel-content">
-                  <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                  {{-- <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
+                  <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p> --}}
                   <div>
-                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                    {{-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a> --}}
                   </div>
                 </div>
               </div>
@@ -71,11 +71,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h3 class="text-center">Visi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed vitae nisl eget ac amet, urna sit. Non faucibus pretium aliquam tempor nunc orci, leo amet.</p>
+                    <p>Sebagai lembaga pendidikan pencetak kader-kader pemimpin umat, menjadi tempat ibadah talab al-’ilmi; dan menjadi sumber pengetahuan Islam, bahasa al-Qur’an, dan ilmu pengetahuan umum, dengan tetap berjiwa pesantren.</p>
                 </div>
                 <div class="col-lg-6">
                     <h3 class="text-center">Misi</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed vitae nisl eget ac amet, urna sit. Non faucibus pretium aliquam tempor nunc orci, leo amet.</p>
+                    <p>1. Membentuk generasi yang unggul menuju terbentuknya khaira ummah.</p>
+                    <p>2. Mendidik dan mengembangkan generasi mukmin-muslim yang berbudi tinggi, berbadan sehat, berpengeta-huan luas, dan berpikiran bebas, serta berkhidmat kepada masyarakat.</p>
+                    <p>3. Mengajarkan ilmu pengetahuan agama dan umum secara seimbang menuju terbentuknya ulama yang intelek.</p>
+                    <p>4. Mewujudkan warga negara yang berkepribadian Indonesia yang beriman dan bertakwa kepada Allah SWT.</p>
                 </div>
             </div>
         </div>  
@@ -335,7 +338,7 @@
         <div class="contact-phone">
           <i class="bi bi-phone"></i>
           <h3>Phone Number</h3>
-          <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+          <p><a href="tel:+155895548855">089610343467</a></p>
         </div>
       </div>
 
@@ -343,7 +346,7 @@
         <div class="contact-email">
           <i class="bi bi-envelope"></i>
           <h3>Email</h3>
-          <p><a href="mailto:info@example.com">info@example.com</a></p>
+          <p><a href="mailto:info@example.com">darulhijrahartodung@gmail.com</a></p>
         </div>
       </div>
 
@@ -385,7 +388,7 @@
           <div class="error-message"></div>
           <div class="sent-message">Your message has been sent. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+        <div class="text-center"><button type="submit">Kirim</button></div>
       </form>
     </div>
 
